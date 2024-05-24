@@ -21,7 +21,7 @@ jobs:
         distribution: 'temurin'
         java-version: ${{ matrix.java }}
     - name: Test install 
-      run: curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+      run: curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh -y
     - name: Clone jpf-core
       run: |
         git clone https://github.com/javapathfinder/jpf-core.git /tmp/jpf-core
