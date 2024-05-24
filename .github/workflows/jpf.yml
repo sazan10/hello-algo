@@ -22,7 +22,7 @@ jobs:
         java-version: ${{ matrix.java }}
     - name: Test install 
       run: | 
-        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | rush_setup.sh
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > rust_setup.sh
         sh rust_setup.sh -y --default-toolchain none
     - name: Clone jpf-core
       run: |
