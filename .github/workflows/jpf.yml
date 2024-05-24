@@ -21,8 +21,7 @@ jobs:
         distribution: 'temurin'
         java-version: ${{ matrix.java }}
     - name: Test install 7zip
-      run: |
-        apt-get install 7zip
+      run: sudo apt-get install 7zip
     - name: Clone jpf-core
       run: |
         git clone https://github.com/javapathfinder/jpf-core.git /tmp/jpf-core
