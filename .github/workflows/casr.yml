@@ -27,6 +27,16 @@ jobs:
     - name: Install casr
       run: |
         cargo install casr
-    - name: Generate and Run JPF Configs
+    - name: Compile Java files
       run: |
-        find . -name '*.java' -exec casr-java -o {}.casrep -- java {} \;
+        mkdir -p build
+        find . -name '*.java' | while read -r javafile; do
+          javac -d "build/$javafile"
+        done
+    - name: Run CASR
+      run: |
+        find build -name '*.class' | while read -r classfile; do
+          classfile_rel=$(echo "$classfile" | sed "s|build/||;s|/|.|g;s|.class$||")
+          echo "Processing $classfile_rel"
+          casr-java -o "$classfile.casrep" -- java -cp build "$classfile_rel"
+        done
