@@ -32,8 +32,4 @@ jobs:
         find codes/java -name "*.java" -print0 | xargs -0 javac
     - name: Run CASR
       run: |
-        find . -name '*.class' | while read -r classfile; do
-          classfile_rel=$(echo "$classfile" | sed "s|./||;s|/|.|g;s|.class$||")
-          echo "Processing $classfile_rel"
-          casr-java -o "$classfile.casrep" -- java -cp . "$classfile_rel"
-        done
+        find . -name '*.class' -exec sh -c 'echo "Processing {}" && casr-java -o {}.casrep -- java {}' \;
