@@ -30,7 +30,6 @@ jobs:
     - name: Compile Java files
       run: |
         find codes/java -name "*.java" -print0 | xargs -0 javac
-        done
     - name: Run CASR
       run: |
         find build -name '*.class' | while read -r classfile; do
