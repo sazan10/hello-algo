@@ -31,7 +31,7 @@ jobs:
       run: |
         mkdir -p build
         find codes/java/ -name '*.java' | while read -r javafile; do
-          javac -d "build" "$javafile"
+          javac -d build "$javafile"
         done
     - name: Run CASR
       run: |
