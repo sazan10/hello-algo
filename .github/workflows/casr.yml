@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        java: [ '11' ]
+        java: [ '17' ]
     name: Java ${{ matrix.java }} Run CASR
 
     steps:
@@ -30,8 +30,7 @@ jobs:
     - name: Compile Java files
       run: |
         mkdir -p build
-        find codes/java/ -name '*.java' | while read -r javafile; do
-          javac -d build "$javafile"
+        find . -name "*.java" -print0 | xargs -0 javac
         done
     - name: Run CASR
       run: |
