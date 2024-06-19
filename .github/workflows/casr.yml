@@ -29,9 +29,4 @@ jobs:
         cargo install casr
     - name: Generate and Run JPF Configs
       run: |
-        find codes/java/ -name "*.java" | while read -r file; do
-          # Extract package name from the Java file
-          package=$(grep "^package " "$file" | awk '{print $2}' | sed 's/;$//')
-          classname=$(basename "$file" .java)
-          casr-java -o java.casrep -- java casr/tests/casr_tests/java/$file
-        done
+        find . -name '*.java' -exec casr-java -o {}.casrep -- java {} \;
