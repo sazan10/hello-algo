@@ -29,13 +29,12 @@ jobs:
         cargo install casr
     - name: Compile Java files
       run: |
-        mkdir -p build
-        find . -name "*.java" -print0 | xargs -0 javac
+        find codes/java -name "*.java" -print0 | xargs -0 javac
         done
     - name: Run CASR
       run: |
         find build -name '*.class' | while read -r classfile; do
-          classfile_rel=$(echo "$classfile" | sed "s|build/||;s|/|.|g;s|.class$||")
+          classfile_rel=$(echo "$classfile" | sed "s|./||;s|/|.|g;s|.class$||")
           echo "Processing $classfile_rel"
-          casr-java -o "$classfile.casrep" -- java -cp build "$classfile_rel"
+          casr-java -o "$classfile.casrep" -- java -cp . "$classfile_rel"
         done
