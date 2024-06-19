@@ -30,7 +30,7 @@ jobs:
     - name: Compile Java files
       run: |
         mkdir -p build
-        find . -name '*.java' | while read -r javafile; do
+        find codes/java/ -name '*.java' | while read -r javafile; do
           javac -d "build/$javafile"
         done
     - name: Run CASR
