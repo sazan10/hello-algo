@@ -33,3 +33,6 @@ jobs:
     - name: Run CASR
       run: |
         find . -name '*.class' -exec sh -c 'echo "Processing {}" && casr-java -o {}.casrep -- java {}' \;
+    - name: List any casr reports created
+      run: |
+        find ./ -name "*.casrep"
