@@ -28,13 +28,52 @@ jobs:
         cd /tmp/jpf-core
         ./gradlew buildJars
         ./gradlew check  
-        ./gradlew check
-        ./gradlew check
-        ./gradlew check
-        ./gradlew check
-        ./gradlew check
-        ./gradlew check
-        ./gradlew check
-        ./gradlew check
-        ./gradlew check
+    - name: Run tests
+      run: |
+        cd /tmp/jpf-core
+        ./gradlew buildJars
+        ./gradlew check  
+    - name: Run tests
+      run: |
+        cd /tmp/jpf-core
+        ./gradlew buildJars
+        ./gradlew check  
+
+    - name: Run tests
+      run: |
+        cd /tmp/jpf-core
+        ./gradlew buildJars
+        ./gradlew check  
+
+    - name: Run tests
+      run: |
+        cd /tmp/jpf-core
+        ./gradlew buildJars
+        ./gradlew check  
+
+    - name: Run tests
+      run: |
+        cd /tmp/jpf-core
+        ./gradlew buildJars
+        ./gradlew check  
+
+    - name: Run tests
+      run: |
+        cd /tmp/jpf-core
+        ./gradlew buildJars
+        ./gradlew check  
+
+    - name: Run tests
+      run: |
+        cd /tmp/jpf-core
+        ./gradlew buildJars
+        ./gradlew check  
+
+    - name: Run tests
+      run: |
+        cd /tmp/jpf-core
+        ./gradlew buildJars
+        ./gradlew check  
+
+
          
