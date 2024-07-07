@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: Checkout Code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v3
       with:
         ref: 56071225cd99afc901f466c50190825501845101
 
