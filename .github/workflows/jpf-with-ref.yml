@@ -30,50 +30,43 @@ jobs:
         ./gradlew check  
     - name: Run tests
       run: |
+        rm -rf ~/.gradle/caches
+        cd /tmp/jpf-core
+        ./gradlew buildJars
+        ./gradlew check 
+    - name: Run tests
+      run: |
+        rm -rf ~/.gradle/caches
         cd /tmp/jpf-core
         ./gradlew buildJars
         ./gradlew check  
     - name: Run tests
       run: |
+        rm -rf ~/.gradle/caches
         cd /tmp/jpf-core
         ./gradlew buildJars
         ./gradlew check  
-
     - name: Run tests
       run: |
+        rm -rf ~/.gradle/caches
         cd /tmp/jpf-core
         ./gradlew buildJars
         ./gradlew check  
-
     - name: Run tests
       run: |
+        rm -rf ~/.gradle/caches
         cd /tmp/jpf-core
         ./gradlew buildJars
         ./gradlew check  
-
     - name: Run tests
       run: |
+        rm -rf ~/.gradle/caches
         cd /tmp/jpf-core
         ./gradlew buildJars
         ./gradlew check  
-
     - name: Run tests
       run: |
+        rm -rf ~/.gradle/caches
         cd /tmp/jpf-core
         ./gradlew buildJars
         ./gradlew check  
-
-    - name: Run tests
-      run: |
-        cd /tmp/jpf-core
-        ./gradlew buildJars
-        ./gradlew check  
-
-    - name: Run tests
-      run: |
-        cd /tmp/jpf-core
-        ./gradlew buildJars
-        ./gradlew check  
-
-
-         
