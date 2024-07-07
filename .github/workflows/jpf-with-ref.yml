@@ -15,6 +15,7 @@ jobs:
     - name: Checkout Code
       uses: actions/checkout@v3
       with:
+        ref: java-8
         sha: 56071225cd99afc901f466c50190825501845101
 
     - name: Set up JDK ${{ matrix.java }}
@@ -28,45 +29,4 @@ jobs:
         cd /tmp/jpf-core
         ./gradlew buildJars
         ./gradlew check  
-    - name: Run tests
-      run: |
-        rm -rf ~/.gradle/caches
-        cd /tmp/jpf-core
-        ./gradlew buildJars
-        ./gradlew check 
-    - name: Run tests
-      run: |
-        rm -rf ~/.gradle/caches
-        cd /tmp/jpf-core
-        ./gradlew buildJars
-        ./gradlew check  
-    - name: Run tests
-      run: |
-        rm -rf ~/.gradle/caches
-        cd /tmp/jpf-core
-        ./gradlew buildJars
-        ./gradlew check  
-    - name: Run tests
-      run: |
-        rm -rf ~/.gradle/caches
-        cd /tmp/jpf-core
-        ./gradlew buildJars
-        ./gradlew check  
-    - name: Run tests
-      run: |
-        rm -rf ~/.gradle/caches
-        cd /tmp/jpf-core
-        ./gradlew buildJars
-        ./gradlew check  
-    - name: Run tests
-      run: |
-        rm -rf ~/.gradle/caches
-        cd /tmp/jpf-core
-        ./gradlew buildJars
-        ./gradlew check  
-    - name: Run tests
-      run: |
-        rm -rf ~/.gradle/caches
-        cd /tmp/jpf-core
-        ./gradlew buildJars
-        ./gradlew check  
+
